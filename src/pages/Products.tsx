@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Bot, FolderOpen, CalendarDays, ClipboardList, ShieldCheck, ClipboardCheck, AlertTriangle, GraduationCap, BarChart3 } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const subSystems = [
   {
@@ -97,6 +98,13 @@ const itemVariants = {
 const Products: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Seo
+        title="产品中心"
+        description="了解微晖医疗临床职能科室一体化管理平台，9大子系统覆盖排班、权限、质量检查、不良事件、培训与指标管理。"
+        keywords="医院管理平台,医疗管理产品,全院排班管理,医疗权限管理,质量检查系统"
+        path="/products"
+      />
+
       <section className="relative py-24 bg-gradient-to-br from-primary/90 to-secondary overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80')] opacity-20 bg-cover bg-center" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

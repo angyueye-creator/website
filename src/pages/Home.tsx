@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Heart, Shield, Building2, Bot, FolderKanban, CalendarDays, ClipboardList, KeyRound, CheckCircle, AlertTriangle, GraduationCap, BarChart3, Stethoscope, Award, FileText, Phone } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const Home: React.FC = () => {
   const advantages = [
@@ -32,6 +33,13 @@ const Home: React.FC = () => {
 
   return (
     <div className="overflow-hidden">
+      <Seo
+        title="微晖医疗官网"
+        description="微晖医疗为医院提供临床职能科室一体化管理平台，覆盖医务、护理、质控、档案等核心管理场景。"
+        keywords="微晖医疗,医院管理系统,医疗信息化,医务管理,护理管理,质量管理,医疗数字化"
+        path="/"
+      />
+
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />

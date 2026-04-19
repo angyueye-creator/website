@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Stethoscope, Heart, Shield, FolderOpen, Check, ArrowRight } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const solutions = [
   {
@@ -49,6 +50,13 @@ const solutions = [
 const Solutions: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Seo
+        title="解决方案"
+        description="微晖医疗提供医务管理、护理管理、质量管理、医护专业档案四大解决方案，助力医疗机构实现高效数字化管理。"
+        keywords="医疗解决方案,医务管理,护理管理,质控管理,医院数字化转型"
+        path="/solutions"
+      />
+
       <section className="relative py-24 bg-gradient-to-br from-dark via-gray-900 to-dark overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl" />

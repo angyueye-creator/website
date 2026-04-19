@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Target, Heart, Lightbulb, Shield, Building2, Award, Mail, Phone, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const About: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -36,6 +37,13 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <Seo
+        title="关于我们"
+        description="了解微晖医疗的品牌愿景、服务客户与核心价值观。我们专注医疗行业数智化管理，打造更高效、更温暖的医院管理体验。"
+        keywords="微晖医疗,医疗科技公司,医院数字化,医疗管理服务商"
+        path="/about"
+      />
+
       <section className="relative py-24 bg-gradient-to-br from-primary/10 via-white to-secondary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1

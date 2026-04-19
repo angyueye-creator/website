@@ -82,6 +82,11 @@ module.exports = (env, argv) => {
             from: 'assets',
             to: 'assets',
             noErrorOnMissing: true
+          },
+          {
+            from: 'public',
+            to: '.',
+            noErrorOnMissing: true
           }
         ]
       })
