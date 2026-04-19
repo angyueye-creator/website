@@ -8,8 +8,14 @@ type SeoProps = {
 };
 
 const SITE_NAME = '微晖医疗';
-const SITE_URL = 'https://weihuiyiliao.com';
+const SITE_URL = 'https://www.weihuiyiliao.com';
 const DEFAULT_IMAGE = `${SITE_URL}/assets/logo.png`;
+
+function buildHashRouteUrl(path: string) {
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  const hashPath = cleanPath === '/' ? '/' : cleanPath;
+  return `${SITE_URL}/#${hashPath}`;
+}
 
 function upsertMeta(name: string, content: string, attr: 'name' | 'property' = 'name') {
   const selector = `meta[${attr}="${name}"]`;
@@ -38,8 +44,7 @@ function upsertCanonical(url: string) {
 
 const Seo: React.FC<SeoProps> = ({ title, description, keywords, path = '/' }) => {
   useEffect(() => {
-    const cleanPath = path.startsWith('/') ? path : `/${path}`;
-    const fullUrl = `${SITE_URL}${cleanPath === '/' ? '' : cleanPath}`;
+    const fullUrl = buildHashRouteUrl(path);
     const fullTitle = `${title} | ${SITE_NAME}`;
 
     document.title = fullTitle;
