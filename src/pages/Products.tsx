@@ -38,10 +38,10 @@ const subSystems = [
   {
     id: 'permission',
     name: '医疗权限管理',
-    subtitle: '权限明晰，安全护航',
-    description: '精细化的权限管理体系，根据岗位、科室、角色灵活配置操作权限。',
+    subtitle: '资质分级，精准授权',
+    description: '全周期管理医师核心资质，灵活配置手术、麻醉、药品及报告权限。',
     icon: ShieldCheck,
-    features: ['岗位权限', '科室权限', '角色配置', '安全管控'],
+    features: ['手术分级授权', '麻醉操作权限', '特殊药品处方', '诊断报告签发'],
   },
   {
     id: 'quality',
