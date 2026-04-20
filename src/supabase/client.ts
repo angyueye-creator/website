@@ -7,11 +7,12 @@ import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
 function getSupabaseUrl(): string {
-  return `${(window as any).MEOO_CONFIG?.meoo_app_access_url || location.origin}/sb-api`;
+  return `${(window as { MEOO_CONFIG?: { meoo_app_access_url?: string } }).MEOO_CONFIG?.meoo_app_access_url || location.origin}/sb-api`;
 }
 
 export const supabaseUrl = getSupabaseUrl();
-export const supabaseAnonKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzc2NTEwOTczLCJleHAiOjEzMjg3MTUwOTczfQ.vWvm61vi0MeaJZBddNinpjAoBdXwiTK-0T_RpwzU3CE';
+export const supabaseAnonKey =
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzc2NTEwOTczLCJleHAiOjEzMjg3MTUwOTczfQ.vWvm61vi0MeaJZBddNinpjAoBdXwiTK-0T_RpwzU3CE';
 
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
   auth: {

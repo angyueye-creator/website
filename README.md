@@ -52,7 +52,19 @@ pnpm run dev
 pnpm run typecheck
 ```
 
-### 4. 生产构建
+### 4. 代码格式化
+
+```bash
+pnpm run format
+```
+
+### 5. 代码检查
+
+```bash
+pnpm run lint
+```
+
+### 6. 生产构建
 
 ```bash
 pnpm run build
@@ -60,24 +72,63 @@ pnpm run build
 
 构建产物输出到 `dist/`。
 
+## 测试
+
+### E2E 测试
+
+使用 Playwright 进行端到端测试。
+
+```bash
+pnpm run test:e2e
+```
+
+### 运行所有检查
+
+```bash
+pnpm run test
+```
+
+### 交互式 UI 模式
+
+```bash
+pnpm run test:e2e:ui
+```
+
 ## 项目结构
 
 ```text
 website/
-├── assets/                   # 静态资源
+├── .github/
+│   └── workflows/              # GitHub Actions
+│       ├── ci.yml             # CI 工作流
+│       └── release-build.yml   # 发布构建
+├── .husky/                     # Git hooks
+├── assets/                     # 静态资源
 ├── src/
-│   ├── components/           # 通用组件（如 Layout）
-│   ├── hooks/                # 自定义 Hooks
-│   ├── pages/                # 页面组件（Home/Products/Solutions/About）
-│   ├── styles/               # 全局样式与 Tailwind 入口
-│   ├── supabase/             # Supabase 客户端与类型
-│   ├── App.tsx               # 路由与页面懒加载
-│   └── index.tsx             # 应用入口
-├── index.html                # HTML 模板
-├── webpack.config.js         # Webpack 配置
+│   ├── components/             # 通用组件（如 Layout）
+│   ├── hooks/                 # 自定义 Hooks
+│   ├── pages/                 # 页面组件（Home/Products/Solutions/About）
+│   ├── styles/                # 全局样式与 Tailwind 入口
+│   ├── supabase/              # Supabase 客户端与类型
+│   ├── App.tsx                # 路由与页面懒加载
+│   └── index.tsx              # 应用入口
+├── tests/e2e/                 # E2E 测试
+│   ├── basic.spec.ts
+│   ├── homepage.spec.ts
+│   └── navigation.spec.ts
+├── index.html                 # HTML 模板
+├── playwright.config.ts       # Playwright 配置
+├── webpack.config.js          # Webpack 配置
 ├── tailwind.config.js        # Tailwind 主题配置
 └── DEPLOY.md                 # 部署说明
 ```
+
+## Git Hooks
+
+项目使用 Husky + lint-staged 实现 pre-commit 检查：
+
+- 提交前自动运行 ESLint 和 Prettier
+- 确保代码风格一致
 
 ## 部署
 
@@ -92,3 +143,4 @@ website/
 - 项目依赖 `pnpm-lock.yaml`，建议统一使用 `pnpm`
 - 路由为 Hash 模式，如需改为 History 模式，需要同步调整服务器回退配置
 - `src/supabase/client.ts` 由工具生成，建议避免手动改动生成逻辑
+- 由于环境限制，`npm audit` 被禁用。如需安全审计，请在本地环境手动运行 `npm audit`
