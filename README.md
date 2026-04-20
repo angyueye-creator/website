@@ -52,13 +52,37 @@ pnpm run dev
 pnpm run typecheck
 ```
 
-### 4. 生产构建
+### 4. 代码检查与格式化
+
+```bash
+pnpm run lint      # ESLint 检查并自动修复
+pnpm run format    # Prettier 格式化代码
+```
+
+### 5. 生产构建
 
 ```bash
 pnpm run build
 ```
 
 构建产物输出到 `dist/`。
+
+## 测试
+
+### E2E 测试（Playwright）
+
+```bash
+pnpm run test:e2e        # 运行所有 E2E 测试
+pnpm run test:e2e:ui     # 交互模式运行测试
+```
+
+测试覆盖：路由导航、页面加载、UI 组件、无控制台错误。
+
+### 运行完整检查
+
+```bash
+pnpm run test            # typecheck + lint + test:e2e
+```
 
 ## 项目结构
 

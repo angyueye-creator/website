@@ -108,3 +108,8 @@ vendor/
 # 构建产物与临时文件
 outputs/
 .microcompact/
+
+# 测试
+test-results/
+playwright-report/
+playwright/test-results/
