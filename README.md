@@ -138,9 +138,29 @@ website/
 - Docker 镜像部署
 - Vercel/Netlify/对象存储静态托管
 
+## 安全审计
+
+### 本地运行
+
+由于项目使用 npmmirror 私有源，该源不支持安全审计。请使用官方 npm 源运行审计：
+
+```bash
+pnpm run audit
+```
+
+或手动执行：
+
+```bash
+npm install --package-lock-only --registry=https://registry.npmjs.org
+npm audit --audit-level=high --registry=https://registry.npmjs.org
+```
+
+### CI 自动审计
+
+GitHub Actions CI 会在每次 push 和 PR 时自动运行安全审计，使用官方 npm registry。
+
 ## 开发注意事项
 
 - 项目依赖 `pnpm-lock.yaml`，建议统一使用 `pnpm`
 - 路由为 Hash 模式，如需改为 History 模式，需要同步调整服务器回退配置
 - `src/supabase/client.ts` 由工具生成，建议避免手动改动生成逻辑
-- 由于环境限制，`npm audit` 被禁用。如需安全审计，请在本地环境手动运行 `npm audit`
