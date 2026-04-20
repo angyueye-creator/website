@@ -132,27 +132,6 @@ weihui-homepage/
 - Docker 镜像部署
 - Vercel/Netlify/对象存储静态托管
 
-## 安全审计
-
-### 本地运行
-
-项目使用腾讯云 npm 镜像进行依赖安装，使用 moderate 级别进行安全审计：
-
-```bash
-pnpm run audit
-```
-
-或手动执行：
-
-```bash
-npm install --package-lock-only --registry=https://mirrors.cloud.tencent.com/npm
-npm audit --audit-level=high
-```
-
-### CI 自动审计
-
-GitHub Actions CI 会在每次 push 和 PR 时自动运行安全审计（high 级别）。
-
 ## 开发注意事项
 
 - 项目依赖 `pnpm-lock.yaml`，建议统一使用 `pnpm`
