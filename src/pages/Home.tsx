@@ -42,28 +42,28 @@ const Home: React.FC = () => {
 
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-10 w-48 sm:w-72 h-48 sm:h-72 bg-primary/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-64 sm:w-96 h-64 sm:h-96 bg-secondary/20 rounded-full blur-3xl" />
         </div>
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/80 text-sm mb-6">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 rounded-full text-white/80 text-xs sm:text-sm mb-4 sm:mb-6">
               专注医疗行业数智AI转型
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               让医院管理<span className="text-primary">更有温度</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 mb-8 font-light">
+            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 mb-6 sm:mb-8 font-light">
               不啻微芒，造炬成阳
             </p>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
+            <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mb-8 sm:mb-10">
               微晖医疗——深耕临床职能科室管理领域，为医疗机构打造高效、安全、温暖的一体化管理平台
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/products" className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-semibold transition-all">
-                了解产品 <ArrowRight className="ml-2 w-5 h-5" />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Link to="/products" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-semibold transition-all text-sm sm:text-base">
+                了解产品 <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5" />
               </Link>
-              <Link to="/about" className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold transition-all">
+              <Link to="/about" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold transition-all text-sm sm:text-base">
                 联系我们
               </Link>
             </div>
@@ -71,20 +71,20 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">核心优势</h2>
+      <section className="py-16 sm:py-20 bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">核心优势</h2>
             <p className="text-gray-600">为什么选择微晖医疗</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {advantages.map((item, idx) => (
-              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="w-7 h-7 text-primary" />
+              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-12 sm:w-14 h-12 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                  <item.icon className="w-6 sm:w-7 h-6 sm:h-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm sm:text-base">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -92,21 +92,21 @@ const Home: React.FC = () => {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">9大子系统</h2>
-            <p className="text-gray-600">一站式解决临床职能科室管理需求</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">9大子系统</h2>
+            <p className="text-gray-600 text-sm sm:text-base">一站式解决临床职能科室管理需求</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {subsystems.map((item, idx) => (
-              <motion.div key={item.key} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }} whileHover={{ y: -5 }} className="group bg-gray-50 rounded-2xl p-6 hover:bg-primary hover:shadow-xl transition-all cursor-pointer">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                    <item.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+              <motion.div key={item.key} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }} whileHover={{ y: -5 }} className="group bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:bg-primary hover:shadow-xl transition-all cursor-pointer">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-lg sm:rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors flex-shrink-0">
+                    <item.icon className="w-5 sm:w-6 h-5 sm:h-6 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-1">{item.name}</h3>
-                    <p className="text-gray-600 group-hover:text-white/80 text-sm">{item.desc}</p>
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-white mb-1">{item.name}</h3>
+                    <p className="text-gray-600 group-hover:text-white/80 text-xs sm:text-sm">{item.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -115,42 +115,42 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">四大解决方案</h2>
-            <p className="text-gray-400">为不同场景提供专业解决方案</p>
+      <section className="py-16 sm:py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">四大解决方案</h2>
+            <p className="text-gray-400 text-sm sm:text-base">为不同场景提供专业解决方案</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {solutions.map((item, idx) => (
-              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} whileHover={{ scale: 1.02 }} className="relative overflow-hidden rounded-2xl bg-gradient-to-br p-8 text-white cursor-pointer" style={{ background: `linear-gradient(135deg, ${idx === 0 ? '#ea5704, #f97316' : idx === 1 ? '#ec4899, #f43f5e' : idx === 2 ? '#f59e0b, #ea5704' : '#3b82f6, #06b6d4'})` }}>
+              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} whileHover={{ scale: 1.02 }} className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br p-6 sm:p-8 text-white cursor-pointer" style={{ background: `linear-gradient(135deg, ${idx === 0 ? '#ea5704, #f97316' : idx === 1 ? '#ec4899, #f43f5e' : idx === 2 ? '#f59e0b, #ea5704' : '#3b82f6, #06b6d4'})` }}>
                 <div className="relative z-10">
-                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                    <item.icon className="w-7 h-7" />
+                  <div className="w-12 sm:w-14 h-12 sm:h-14 bg-white/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                    <item.icon className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-3">{item.name}</h3>
-                  <p className="text-white/80">{item.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{item.name}</h3>
+                  <p className="text-white/80 text-sm sm:text-base">{item.desc}</p>
                 </div>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-light">
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="py-16 sm:py-20 bg-light">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">品牌故事</h2>
-            <div className="bg-white rounded-2xl p-10 shadow-lg">
-              <h3 className="text-2xl font-bold text-primary mb-6">不啻微芒，造炬成阳</h3>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">品牌故事</h2>
+            <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-primary mb-4 sm:mb-6">不啻微芒，造炬成阳</h3>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                 "微晖"二字，源自成语"不啻微芒，造炬成阳"。我们相信——哪怕只是微弱的光芒，汇聚起来也能照亮前行的道路。
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                 微晖医疗是一家专注于医疗行业数字化转型的科技企业，深耕临床职能科室管理领域。我们致力于以智能化技术为驱动，为医疗机构提供温暖、高效、安全的临床职能科室管理解决方案。
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                 我们不做诊疗，不直接服务病人，只专注于为临床科室提供高效的后勤管理支撑。从细微处着手，以智能化之力，为医疗机构打造高效、安全、温暖的管理平台。
               </p>
             </div>
@@ -158,17 +158,17 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="py-16 sm:py-20 bg-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">开启数字化转型之旅</h2>
-            <p className="text-white/80 text-lg mb-8">联系我们，获取专属解决方案</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:18969041110" className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                <Phone className="mr-2 w-5 h-5" /> 18969041110
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">开启数字化转型之旅</h2>
+            <p className="text-white/80 text-base sm:text-lg mb-6 sm:mb-8">联系我们，获取专属解决方案</p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <a href="tel:18969041110" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-primary rounded-full font-semibold hover:bg-gray-100 transition-colors text-sm sm:text-base">
+                <Phone className="mr-2 w-4 sm:w-5 h-4 sm:h-5" /> 18969041110
               </a>
-              <Link to="/about" className="inline-flex items-center justify-center px-8 py-4 bg-white/20 text-white rounded-full font-semibold hover:bg-white/30 transition-colors">
-                在线咨询 <ArrowRight className="ml-2 w-5 h-5" />
+              <Link to="/about" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/20 text-white rounded-full font-semibold hover:bg-white/30 transition-colors text-sm sm:text-base">
+                在线咨询 <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5" />
               </Link>
             </div>
           </motion.div>
