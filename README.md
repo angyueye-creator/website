@@ -86,20 +86,26 @@ pnpm run test            # typecheck + lint + test:e2e
 
 ## 项目结构
 
-```text
-website/
-├── assets/                   # 静态资源
+```
+weihui-homepage/
+├── assets/                   # 静态资源（图片、SVG 等）
+├── public/                   # 公共静态资源
 ├── src/
-│   ├── components/           # 通用组件（如 Layout）
-│   ├── hooks/                # 自定义 Hooks
+│   ├── components/           # 通用组件（Layout、Seo）
+│   ├── hooks/                # 自定义 Hooks（useTheme）
 │   ├── pages/                # 页面组件（Home/Products/Solutions/About）
 │   ├── styles/               # 全局样式与 Tailwind 入口
 │   ├── supabase/             # Supabase 客户端与类型
+│   ├── types/                # TypeScript 类型定义
 │   ├── App.tsx               # 路由与页面懒加载
 │   └── index.tsx             # 应用入口
+├── tests/                    # E2E 测试（Playwright）
 ├── index.html                # HTML 模板
 ├── webpack.config.js         # Webpack 配置
 ├── tailwind.config.js        # Tailwind 主题配置
+├── playwright.config.ts      # Playwright 配置
+├── .eslintrc.js              # ESLint 配置
+├── .prettierrc               # Prettier 配置
 └── DEPLOY.md                 # 部署说明
 ```
 
