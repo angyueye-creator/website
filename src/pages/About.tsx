@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Target, Heart, Lightbulb, Shield, Building2, Award, Mail, Phone, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
+import {
+  Target,
+  Heart,
+  Lightbulb,
+  Shield,
+  Award,
+  Mail,
+  Phone,
+  MapPin,
+  ChevronDown,
+  ChevronUp,
+} from 'lucide-react';
 import Seo from '../components/Seo';
 
 const About: React.FC = () => {
@@ -23,16 +34,24 @@ const About: React.FC = () => {
   ];
 
   const contactInfo = [
-    { icon: Mail, title: '电子邮箱', content: 'yeangyue@weihuiyiliao.com', href: 'mailto:yeangyue@weihuiyiliao.com' },
+    {
+      icon: Mail,
+      title: '电子邮箱',
+      content: 'yeangyue@weihuiyiliao.com',
+      href: 'mailto:yeangyue@weihuiyiliao.com',
+    },
     { icon: Phone, title: '服务热线', content: '18969041110', href: 'tel:18969041110' },
     { icon: MapPin, title: '公司地址', content: '杭州余杭区乐富海邦园17幢7楼' },
   ];
 
   const faqs = [
-    { q: '如何申请产品试用？', a: '您可以通过页面表单提交申请，或拨打服务热线联系我们的销售团队。' },
+    {
+      q: '如何申请产品试用？',
+      a: '您可以通过页面表单提交申请，或拨打服务热线联系我们的销售团队。',
+    },
     { q: '支持哪些医院类型？', a: '我们支持综合医院、专科医院、社区医院等多种医疗机构类型。' },
     { q: '系统部署周期多久？', a: '标准部署周期为2-4周，具体根据医院规模和定制需求而定。' },
-    { q: '是否提供培训服务？', a: '是的，我们提供完整的系统使用培训和持续的技术支持服务。' }
+    { q: '是否提供培训服务？', a: '是的，我们提供完整的系统使用培训和持续的技术支持服务。' },
   ];
 
   return (
@@ -144,7 +163,9 @@ const About: React.FC = () => {
                     </div>
                   )}
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 text-center">{client.name}</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 text-center">
+                  {client.name}
+                </h3>
               </motion.div>
             ))}
           </div>
@@ -161,9 +182,7 @@ const About: React.FC = () => {
           >
             <Target className="w-16 h-16 mx-auto mb-6 opacity-80" />
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">我们的愿景</h2>
-            <p className="text-xl md:text-2xl opacity-90 mb-4">
-              以AI之力，重塑医疗管理新范式
-            </p>
+            <p className="text-xl md:text-2xl opacity-90 mb-4">以AI之力，重塑医疗管理新范式</p>
             <p className="text-lg opacity-80 max-w-3xl mx-auto">
               致力于成为医疗行业领先的AI数字化赋能者，用智能科技温暖每一位医护工作者，让医疗机构的管理更高效、更智慧、更有温度。
             </p>
@@ -173,7 +192,9 @@ const About: React.FC = () => {
 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12 md:mb-16">价值观</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12 md:mb-16">
+            价值观
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {values.map((v, i) => (
               <motion.div
@@ -222,7 +243,10 @@ const About: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
                 {item.href ? (
-                  <a href={item.href} className="text-gray-600 hover:text-primary transition-colors">
+                  <a
+                    href={item.href}
+                    className="text-gray-600 hover:text-primary transition-colors"
+                  >
                     {item.content}
                   </a>
                 ) : (
@@ -266,11 +290,7 @@ const About: React.FC = () => {
                     <ChevronDown className="w-5 h-5 text-gray-400" />
                   )}
                 </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-4 text-gray-600">
-                    {faq.a}
-                  </div>
-                )}
+                {openFaq === index && <div className="px-6 pb-4 text-gray-600">{faq.a}</div>}
               </motion.div>
             ))}
           </div>
