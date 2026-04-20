@@ -142,7 +142,7 @@ website/
 
 ### 本地运行
 
-由于项目使用 npmmirror 私有源，该源不支持安全审计。请使用官方 npm 源运行审计：
+项目使用腾讯云 npm 镜像进行依赖安装，使用 moderate 级别进行安全审计：
 
 ```bash
 pnpm run audit
@@ -151,13 +151,13 @@ pnpm run audit
 或手动执行：
 
 ```bash
-npm install --package-lock-only --registry=https://registry.npmjs.org
-npm audit --audit-level=high --registry=https://registry.npmjs.org
+npm install --package-lock-only --registry=https://mirrors.cloud.tencent.com/npm
+npm audit --audit-level=moderate
 ```
 
 ### CI 自动审计
 
-GitHub Actions CI 会在每次 push 和 PR 时自动运行安全审计，使用官方 npm registry。
+GitHub Actions CI 会在每次 push 和 PR 时自动运行安全审计（moderate 级别）。
 
 ## 开发注意事项
 
