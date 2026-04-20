@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -31,6 +32,12 @@ body {
   color: var(--text-color);
 }
 
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+}
+
 .scrollbar-thin::-webkit-scrollbar {
   height: 8px;
 }
@@ -47,4 +54,29 @@ body {
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
   background: #64748b;
+}
+
+@media (max-width: 640px) {
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  button,
+  a,
+  .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

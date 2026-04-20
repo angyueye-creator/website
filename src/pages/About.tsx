@@ -66,7 +66,7 @@ const About: React.FC = () => {
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -115,13 +115,13 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">服务客户</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">服务客户</h2>
             <p className="text-gray-600">携手行业标杆，共创智慧医疗</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {clients.map((client, i) => (
               <motion.div
                 key={i}
@@ -129,9 +129,9 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+                className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
               >
-                <div className="h-28 flex items-center justify-center mb-6">
+                <div className="h-20 sm:h-28 flex items-center justify-center mb-4 sm:mb-6">
                   {client.logo ? (
                     <img
                       src={client.logo}
@@ -139,12 +139,12 @@ const About: React.FC = () => {
                       className="max-h-full max-w-full object-contain"
                     />
                   ) : (
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    <div className="w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg">
                       {client.shortName.slice(0, 2)}
                     </div>
                   )}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 text-center">{client.name}</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 text-center">{client.name}</h3>
               </motion.div>
             ))}
           </div>
@@ -160,7 +160,7 @@ const About: React.FC = () => {
             className="bg-gradient-to-r from-primary to-secondary rounded-3xl p-12 md:p-16 text-white"
           >
             <Target className="w-16 h-16 mx-auto mb-6 opacity-80" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">我们的愿景</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">我们的愿景</h2>
             <p className="text-xl md:text-2xl opacity-90 mb-4">
               以AI之力，重塑医疗管理新范式
             </p>
@@ -173,8 +173,8 @@ const About: React.FC = () => {
 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-16">价值观</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12 md:mb-16">价值观</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {values.map((v, i) => (
               <motion.div
                 key={i}
@@ -207,7 +207,7 @@ const About: React.FC = () => {
             <p className="text-gray-600">期待与您的合作，让医院管理更有温度</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
             {contactInfo.map((item, index) => (
               <motion.div
                 key={index}
@@ -240,9 +240,9 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">常见问题</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">常见问题</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto space-y-4">
