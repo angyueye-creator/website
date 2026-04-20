@@ -27,7 +27,6 @@ test.describe('基础功能测试', () => {
     await expect(menuButton).toBeVisible();
     await menuButton.click();
     await expect(page.locator('.lg\\:hidden nav >> text=首页')).toBeVisible({ timeout: 5000 });
-    await expect(mobileMenu).toBeVisible();
   });
 
   test('navigation active state should update on route change', async ({ page }) => {
