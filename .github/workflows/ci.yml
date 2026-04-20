@@ -47,7 +47,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install --package-lock-only --ignore-scripts --registry=https://mirrors.cloud.tencent.com/npm
+        run: |
+          export npm_config_ignore_scripts=true
+          npm install --package-lock-only --registry=https://mirrors.cloud.tencent.com/npm
 
       - name: Run security audit
         run: npm audit --audit-level=moderate
