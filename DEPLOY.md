@@ -59,6 +59,7 @@ docker run -d -p 80:80 weihui-website
 ### 方式三：静态托管
 
 将 `dist/` 目录上传到：
+
 - 阿里云 OSS
 - 腾讯云 COS
 - Vercel / Netlify
@@ -101,4 +102,4 @@ npx serve .
 
 ---
 
-有问题找叶昂越 or 叶知秋 🍂
+有问题找叶昂越 or 叶知秋
