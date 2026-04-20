@@ -84,7 +84,7 @@ const Layout: React.FC = () => {
 
             <div className="hidden md:flex items-center space-x-4">
               <a
-                href="tel:400-XXX-XXXX"
+                href="tel:18969041110"
                 className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all ${
                   isScrolled || isLightHeader
                     ? 'bg-primary/10 text-primary hover:bg-primary hover:text-white'
@@ -191,11 +191,11 @@ const Layout: React.FC = () => {
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
                   <Phone className="w-5 h-5 text-primary mt-0.5" />
-                  <span className="text-gray-400">18969041110</span>
+                  <a href="tel:18969041110" className="text-gray-400 hover:text-primary transition-colors">18969041110</a>
                 </li>
                 <li className="flex items-start space-x-3">
                   <Mail className="w-5 h-5 text-primary mt-0.5" />
-                  <span className="text-gray-400">yeangyue@weihuiyiliao.com</span>
+                  <a href="mailto:yeangyue@weihuiyiliao.com" className="text-gray-400 hover:text-primary transition-colors">yeangyue@weihuiyiliao.com</a>
                 </li>
               </ul>
             </div>
@@ -208,7 +208,7 @@ const Layout: React.FC = () => {
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">隐私政策</a>
               <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">服务条款</a>
-              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">网站地图</a>
+              <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-sm transition-colors">网站地图</a>
             </div>
           </div>
         </div>

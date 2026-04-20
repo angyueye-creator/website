@@ -23,8 +23,8 @@ const About: React.FC = () => {
   ];
 
   const contactInfo = [
-    { icon: Mail, title: '电子邮箱', content: 'yeangyue@weihuiyiliao.com' },
-    { icon: Phone, title: '服务热线', content: '18969041110' },
+    { icon: Mail, title: '电子邮箱', content: 'yeangyue@weihuiyiliao.com', href: 'mailto:yeangyue@weihuiyiliao.com' },
+    { icon: Phone, title: '服务热线', content: '18969041110', href: 'tel:18969041110' },
     { icon: MapPin, title: '公司地址', content: '杭州余杭区乐富海邦园17幢7楼' },
   ];
 
@@ -221,7 +221,13 @@ const About: React.FC = () => {
                   <item.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.content}</p>
+                {item.href ? (
+                  <a href={item.href} className="text-gray-600 hover:text-primary transition-colors">
+                    {item.content}
+                  </a>
+                ) : (
+                  <p className="text-gray-600">{item.content}</p>
+                )}
               </motion.div>
             ))}
           </div>
