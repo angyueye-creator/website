@@ -5,6 +5,10 @@ on:
     types:
       - published
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.release.tag_name }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -48,9 +52,10 @@ jobs:
           build_time="$(TZ='Asia/Shanghai' date +'%Y%m%d-%H%M%S')"
           asset_name="dist-${tag_name}-${build_time}.zip"
 
+          WORKDIR="$PWD"
           cd dist
-          zip -r "../${asset_name}" .
-          cd -
+          zip -r "${WORKDIR}/${asset_name}" .
+          cd "$WORKDIR"
 
           echo "asset_name=${asset_name}" >> "$GITHUB_OUTPUT"
 

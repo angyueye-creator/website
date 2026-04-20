@@ -59,12 +59,12 @@ test.describe('导航测试', () => {
 
   test('all routes should have no console errors', async ({ page }) => {
     const routes = ['/', '/products', '/solutions', '/about'];
+    const errors: string[] = [];
+    page.on('pageerror', err => errors.push(err.message));
     for (const route of routes) {
-      const errors: string[] = [];
-      page.on('pageerror', err => errors.push(err.message));
       await page.goto(route);
       await page.waitForLoadState('networkidle');
-      expect(errors.filter(e => !e.includes('favicon'))).toHaveLength(0);
     }
+    expect(errors.filter(e => !e.includes('favicon'))).toHaveLength(0);
   });
 });

@@ -65,7 +65,7 @@ pnpm run format    # Prettier 格式化代码
 ### 5. 生产构建
 
 ```bash
-pnnpm run build
+pnpm run build
 ```
 
 构建产物输出到 `dist/`。
